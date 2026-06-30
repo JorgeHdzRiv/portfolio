@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 
 # 1. CONFIGURACIÓN DE LA PÁGINA
 st.set_page_config(
-    page_title="Data Science Portfolio",
+    page_title="DS Portfolio",
     page_icon="🚀",
     layout="wide"
 )
@@ -18,7 +18,7 @@ with st.sidebar:
     opcion = st.radio(
         "Ir a:",
         ["👤 Sobre Mí", "🛠️ Habilidades", "💻 Catálogo de Proyectos", "📧 Contacto"],
-        index=2 # Empezar en Proyectos por defecto
+        index=0 # Empezar en Proyectos por defecto
     )
 
 # ==========================================
@@ -188,7 +188,6 @@ elif "Catálogo" in opcion:
     with col1:
         # PROYECTO 1: FUNDACIÓN AYUDA MUTUA
         with st.container(border=True):
-            # Usando una imagen representativa de dashboards/donaciones (puedes cambiarla por tu asset local luego)
             st.image("./assets/login_ayudamutua.PNG", width='stretch')
             
             st.subheader("Fundación Ayuda Mutua: Segmentación Analítica")
@@ -200,44 +199,35 @@ elif "Catálogo" in opcion:
             """)
             
             c1, c2 = st.columns(2)
-            # Enlaces reales extraídos de tu README
             c1.link_button("📂 Ver Repositorio", "https://github.com/JorgeHdzRiv/Ayuda_Mutua_App")
             c2.link_button("🚀 Ver Despliegue", "https://ayudamutua.streamlit.app/")
 
     with col2:
-        # ESPACIO PARA TU SEGUNDO PROYECTO MENCIONADO
+        # PROYECTO 2: IMDB END-TO-END ANALYTICS
         with st.container(border=True):
-            # Imagen placeholder hasta que definamos el segundo proyecto
-            st.image("https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80", width='stretch')
+            st.image("./assets/dashboard.jpg", width='stretch')
             
-            st.subheader("Proyecto 2: (Espacio Reservado)")
-            st.caption("🛠️ **Stack:** Por definir")
+            st.subheader("IMDb: Ecosistema End-to-End")
+            st.caption("🛠️ **Stack:** Python | Google BigQuery | Power BI | Streamlit")
             
             st.write("""
-            *Espacio reservado para el segundo proyecto que tienes en mente.* Aquí detallaremos 
-            el objetivo, las herramientas utilizadas y el impacto del análisis realizado.
+            Pipeline ETL completo con limpieza de datos en la nube. 
+            El proyecto incluye una Web App interactiva y un dashboard analítico para la auditoría de métricas cinematográficas.
             """)
-            
-            c1, c2 = st.columns(2)
-            c1.link_button("📂 Ver Código", "https://github.com/JorgeHdzRiv")
-            c2.link_button("🚀 Ver Producción", "#")
 
-    st.write("") # Espaciador
+            c1, c2, c3 = st.columns(3)
+            c1.link_button("📂 Código", "https://github.com/JorgeHdzRiv/IMDB-End-to-End-Analytics")
+            c2.link_button("🚀 App", "https://imdbtopmovies.streamlit.app/")
+            c3.link_button("📊 BI", "https://github.com/JorgeHdzRiv/IMDB-End-to-End-Analytics/raw/refs/heads/main/dashboard/imdb_analytics.pbix") 
+
+    st.write("")
 
     # --- FILA 2 DE PROYECTOS ---
     col3, col4 = st.columns(2)
 
     with col3:
         with st.container(border=True):
-            st.image("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80", width='stretch')
-            st.subheader("Predicción de Torneos Internacionales")
-            st.write("""
-            Modelo probabilístico basado en el histórico de selecciones nacionales para predecir 
-            resultados de partidos de la Copa del Mundo utilizando modelos de Poisson.
-            """)
-            c1, c2 = st.columns(2)
-            c1.link_button("📂 Ver Código", "https://github.com/tu-usuario/wc-predictor")
-            c2.link_button("🚀 Ver Producción", "https://wc-2026-predictor.streamlit.app")
+            st.info("⌛ **Próximamente:** Construyendo un nuevo proyecto de datos.")
 
     with col4:
         with st.container(border=True):
@@ -248,15 +238,7 @@ elif "Catálogo" in opcion:
 
     with col5:
         with st.container(border=True):
-            st.image("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80", width='stretch')
-            st.subheader("Otro Proyecto")
-            st.write("""
-            Modelo probabilístico basado en el histórico de selecciones nacionales para predecir 
-            resultados de partidos de la Copa del Mundo utilizando modelos de Poisson.
-            """)
-            c1, c2 = st.columns(2)
-            c1.link_button("📂 Ver Código", "https://github.com/tu-usuario/wc-predictor")
-            c2.link_button("🚀 Ver Producción", "https://wc-2026-predictor.streamlit.app")
+            st.info("⌛ **Próximamente:** Construyendo un nuevo proyecto de datos.")
 
     with col6:
         with st.container(border=True):
@@ -265,15 +247,12 @@ elif "Catálogo" in opcion:
 # ==========================================
 # SECCIÓN: CONTACTO
 # ==========================================
-# ==========================================
-# SECCIÓN: CONTACTO
-# ==========================================
 elif "Contacto" in opcion:
     st.title("📧 ¡Hablemos!")
     st.write("Si tienes un desafío de datos que necesitas resolver, una propuesta de colaboración o simplemente quieres conectar, no dudes en ponerte en contacto.")
     st.divider()
     
-    # Dividimos la pantalla en dos columnas grandes
+    # Columnas Grandes
     col1, col2 = st.columns([1, 1.2], gap="large")
     
     with col1:
@@ -281,7 +260,7 @@ elif "Contacto" in opcion:
         st.write("Puedes encontrarme y contactarme directamente a través de los siguientes medios:")
         st.write("### ")
         
-        # Tarjetas de información de contacto (se adaptan solas al fondo claro/oscuro)
+        # Tarjetas de información de contacto
         with st.container(border=True):
             st.markdown("**✉️ Correo Electrónico:**")
             st.write("jorge.hdzr96@gmail.com")
@@ -290,7 +269,7 @@ elif "Contacto" in opcion:
             st.markdown("**📱 Teléfono / WhatsApp:**")
             st.write("+52 462 102 0836")
             
-            # Enlace a la API de WhatsApp con un mensaje predeterminado
+            # API Whatsapp
             mensaje_wa = "Hola Jorge, vi tu portafolio de Ciencia de Datos y me gustaría contactarte."
             url_wa = f"https://wa.me/524621020836?text={mensaje_wa.replace(' ', '%20')}"
             
@@ -304,7 +283,6 @@ elif "Contacto" in opcion:
         st.markdown("#### 🌐 Redes Profesionales")
         st.write("Explora mi código o conecta conmigo a nivel profesional:")
         
-        # Botones de enlace limpios uno al lado del otro
         c1, c2 = st.columns(2)
         c1.link_button("💼 LinkedIn", "https://linkedin.com/in/JorHdzRiv")
         c2.link_button("💻 GitHub", "https://github.com/JorgeHdzRiv")
