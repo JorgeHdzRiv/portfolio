@@ -1,0 +1,13 @@
+# Framework web
+streamlit
+
+# Manipulación de datos 
+pandas
+numpy
+
+# ---------------------------------------------------------
+# Nota: Librerias opcionales
+# scikit-learn
+# plotly
+# psycopg2-binary # (conexiones SQL)
+# ---------------------------------------------------------

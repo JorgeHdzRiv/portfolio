@@ -1,0 +1,23 @@
+# Entornos virtuales
+venv/
+env/
+.env/
+.portfolio/
+portfolio/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secretos y credenciales de Streamlit (¡MUY IMPORTANTE!)
+.streamlit/
+.streamlit/secrets.toml
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints (si llegas a usar notebooks en la misma carpeta)
+.ipynb_checkpoints/
